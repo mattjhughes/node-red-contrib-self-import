@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    RED.nodes.registerType('self-import', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            token: { value: "", required: false },
+            tabId: { value: "", required: true }  // New tab ID field
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.png",
+        label: function () {
+            return this.name || "self-import";
+        },
+        oneditprepare: function () {
+            // Additional UI logic here
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="self-import">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-token"><i class="icon-lock"></i> Token</label>
+        <input type="text" id="node-input-token" placeholder="API Token">
+    </div>
+    <div class="form-row">
+        <label for="node-input-tabId"><i class="icon-book"></i> Tab ID (z)</label>  <!-- New tab ID field -->
+        <input type="text" id="node-input-tabId" placeholder="Tab ID">
+    </div>
+</script>
